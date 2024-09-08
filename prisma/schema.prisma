@@ -18,10 +18,7 @@ datasource db {
 model User {
   id           String    @id
   username     String    @unique
-  firstName    String
-  lastName     String
   email        String?   @unique
-  phoneNumber  String
   googleId     String?   @unique
   passwordHash String?   @unique
   sessions     Session[]

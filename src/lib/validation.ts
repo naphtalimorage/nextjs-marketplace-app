@@ -18,7 +18,7 @@ export type SignupValues = z.infer<typeof signupSchema>;
 
 
 export const LoginSchema = z.object({
-    email: requiredString,
+    username: requiredString,
     password: requiredString
 });
 
