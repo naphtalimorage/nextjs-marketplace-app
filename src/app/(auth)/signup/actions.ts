@@ -1,4 +1,4 @@
-"user server";
+"use server";
 
 import { lucia } from "@/auth";
 import prisma from "@/lib/prisma";
@@ -10,7 +10,7 @@ import { isRedirectError } from "next/dist/client/components/redirect";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
-export async function Signup(
+export  async function Signup(
   credentials: SignupValues
 ): Promise<{ error: string }> {
   try {
@@ -20,7 +20,7 @@ export async function Signup(
       memoryCost: 19456,
       timeCost: 2,
       outputLen: 32,
-      parallelism: 1
+      parallelism: 1,
     });
 
     const userId = generateIdFromEntropySize(10);
@@ -62,18 +62,19 @@ export async function Signup(
         email,
         passwordHash,
       },
-  })
-
+    });
 
     const session = await lucia.createSession(userId, {});
-	const sessionCookie = lucia.createSessionCookie(session.id);
-	cookies().set(sessionCookie.name, sessionCookie.value, sessionCookie.attributes);
+    const sessionCookie = lucia.createSessionCookie(session.id);
+    cookies().set(
+      sessionCookie.name,
+      sessionCookie.value,
+      sessionCookie.attributes
+    );
 
-
-	return redirect("/");
-    
+    return redirect("/");
   } catch (err) {
-    if(isRedirectError(error)) throw error;
+    if (isRedirectError(error)) throw error;
     console.error(err);
     return {
       error: "Something went wrong. Please try again.",
