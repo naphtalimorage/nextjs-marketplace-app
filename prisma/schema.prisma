@@ -15,6 +15,42 @@ datasource db {
   directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
 }
 
+model MotorcycleUser {
+  id          Int         @id @default(autoincrement())
+  firstName   String
+  lastName    String
+  email       String?     @unique
+  phoneNumber String
+  motorbikes  Motorbike[]
+
+  @@map("motorbikeusers")
+}
+
+model Motorbike {
+  id              Int      @id @default(autoincrement())
+  plateNumber     String   @unique
+  color           String
+  engineSize      Float
+  fuelConsumption Float
+  make            String
+  condition       String
+  model           String
+  price           Float
+  fuelType        String
+  manufactureYear Int?
+  mileage         Float
+  createdAt       DateTime @default(now())
+  location        String
+  imageUrls       String[]
+  availability    Boolean
+  description     String?
+  userId          Int
+  user            MotorcycleUser     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("motorbikes")
+}
+
 model User {
   id           String    @id
   username     String    @unique
