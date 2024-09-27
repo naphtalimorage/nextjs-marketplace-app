@@ -17,17 +17,17 @@ const Home = () => {
             Welcome to the worlds largest online marketplace for motorcycles,
             where you can buy, sell, and trade your old and new vehicles.
           </p>
-          <div className="flex  mt-10 flex-col lg:flex-row gap-5">
+          <div className="flex  mt-10 flex-col md:flex-row lg:flex-row gap-5">
             <div>
               <Link href="/buymotorbike">
-                <Button className="bg-red-700 hover:bg-red-800 text-white px-8 py-2 rounded-md">
+                <Button className="bg-red-700 hover:bg-red-800 active:w-28 text-white px-8 py-2 rounded-md">
                   Buy Now
                 </Button>
               </Link>
             </div>
             <div>
               <Link href="/sellmotorbike">
-                <Button className="bg-red-700 hover:bg-red-800 text-white px-8 py-2 rounded-md">
+                <Button className="bg-red-700 hover:bg-red-800 active:w-28 text-white px-8 py-2 rounded-md">
                   Sell Now
                 </Button>
               </Link>
