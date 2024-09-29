@@ -32,7 +32,7 @@ export default function BikeCard({ bikeName, cost, description }: BikeProps) {
           <CardDescription>{description}</CardDescription>
         </CardContent>
         <CardFooter>
-          <Button>Available</Button>
+          <Button type="button" className="bg-card w-full   hover:bg-black">Available</Button>
         </CardFooter>
       </Card>
     </div>
