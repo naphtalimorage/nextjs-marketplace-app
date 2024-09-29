@@ -26,35 +26,35 @@ export default function ButtonLinks() {
           return (
             <Link href={link.href} key={link.step}>
               <div
-                className={`w-80 h-28 border ${
+                className={`w-80 h-28 mt-10 p-2  rounded-sm ${ 
                   isActive
                     ? "border   border-green-600 text-green-600"
                     : "border border-black text-black"
                 }`}
               >
                 <Button
-                  className={`rounded-full w-11 h-11${
+                  className={`rounded-full w-14 h-14 ${
                     isActive
-                      ? "border   border-green-600 text-green-600"
-                      : "border border-black text-black"
+                      ? "bg-green-600 text-white "
+                      : "bg-gray-500"
                   }`}
                 >
                   {link.step}
                 </Button>
                 <Button
-                  className={` ${
+                  className={` text-xl font-bold ${
                     isActive
-                      ? "border   border-green-600 text-green-600"
-                      : "border border-black text-black"
+                      ? "text-green-600"
+                      : " text-black"
                   }`}
                 >
                   {link.buttonText}
                 </Button>
                 <p
-                  className={`${
+                  className={` flex text-sm ml-[70px] ${
                     isActive
-                      ? "border   border-green-600 text-green-600"
-                      : "border border-black text-black"
+                      ? "text-green-600"
+                      : " text-black"
                   }`}
                 >
                   {link.description}
