@@ -1,7 +1,8 @@
 export default function PersonalInfoForm() {
     return(
         <div>
-            <h1>Personal Info Form</h1>
+            <h2>Personal Information</h2>
+           
         </div>
     )
 }
