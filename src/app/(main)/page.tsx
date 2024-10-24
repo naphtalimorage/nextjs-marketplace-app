@@ -9,7 +9,7 @@ const Home = () => {
       <div className="flex flex-col lg:flex-row gap-11">
         <div className="ml-20 mt-20  w-[400px]">
           <h1 className="text-4xl font-serif font-bold  mb-10 text-primary ">
-            The safest way to <Link href="/sellmotorbike" className="text-red-700">sell</Link>
+            The safest way to <Link href="/bikedetails" className="text-red-700">sell</Link>
             <br /> and <Link href="/buymotorbike" className="text-red-700">buy</Link> your motorbike{" "}
             <br /> in kenya
           </h1>

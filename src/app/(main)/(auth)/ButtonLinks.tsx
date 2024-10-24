@@ -7,13 +7,13 @@ const Links = [
     step: "1",
     buttonText: "Motorbike Details",
     description: "Tell us about your Motorbike",
-    href: "/contactdetails",
+    href: "/bikedetails",
   },
   {
     step: "2",
     buttonText: "Contact Details",
     description: "Let us know how to reach you",
-    href: "/bikedetails",
+    href: "/contactdetails",
   },
 ];
 export default function ButtonLinks() {
